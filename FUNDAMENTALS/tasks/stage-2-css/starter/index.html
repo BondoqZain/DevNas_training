@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio — frontend developer">
+  <title>My Portfolio — Style the Portfolio (Starter)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="#home">My Portfolio</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Hi, I'm a Frontend Developer</h1>
+      <p>I build accessible, responsive web experiences.</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>I'm learning HTML, CSS, and JavaScript. This portfolio is built with semantic HTML.</p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS (Flexbox, Grid)</li>
+        <li>JavaScript (ES6+)</li>
+      </ul>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <article>
+        <h3>Task List App</h3>
+        <p>A simple interactive task list with local storage.</p>
+        <a href="#home">View project</a>
+      </article>
+      <article>
+        <h3>Portfolio Page</h3>
+        <p>This page — semantic HTML, no framework.</p>
+        <a href="#home">View project</a>
+      </article>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <form action="#" method="get">
+        <p>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </p>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; My Portfolio. Built with semantic HTML.</p>
+  </footer>
+</body>
+</html>

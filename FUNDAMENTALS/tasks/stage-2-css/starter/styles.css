@@ -1,0 +1,19 @@
+/*
+  STAGE 2 — STARTER
+  Add your CSS here to style the portfolio.
+
+  Requirements (see learning plan):
+  - CSS variables in :root (e.g. --color-primary, --spacing-unit)
+  - Flexbox or Grid for layout
+  - Responsive: mobile-first, at least one breakpoint (e.g. 768px)
+  - Typography and spacing (use rem)
+  - box-sizing: border-box
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Add your styles below */

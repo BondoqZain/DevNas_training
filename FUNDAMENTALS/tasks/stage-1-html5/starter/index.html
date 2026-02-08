@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio — Starter</title>
+  </head>
+  <body>
+    <!--
+    STAGE 1 — STARTER
+    Build a one-page portfolio with semantic HTML only (no CSS).
+
+    Required:
+    - One <h1>
+    - Semantic sections: header (logo + nav), main with article/sections, footer
+    - Hero section
+    - About section
+    - Skills (list)
+    - Projects (titles + short descriptions + links)
+    - Contact form (name, email, message) with proper <label> for each input
+
+    Use: <header>, <nav>, <main>, <section>, <article>, <footer>
+    Avoid: using <div> for main structure
+  -->
+    <header>
+      <h5>welcome to my portfolio</h5>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Hi, it's Zain Bondoq</h1>
+        <p>I'm a frontend trainee at DevNas!!</p>
+      </section>
+      <section id="about">
+        <h1>About</h1>
+        <p>
+          Aspiring Software Engineer with a Passion for Innovation. Driven by
+          curiosity and a love for problem-solving, I thrive on transforming
+          complex challenges into elegant solutions. With a solid foundation in
+          programming and a keen eye for detail, I’m eager to contribute to
+          dynamic projects that make a difference.
+        </p>
+      </section>
+      <section id="skills">
+        <h1>Skills</h1>
+        <ul>
+          <li>Problem-Solving Ownership</li>
+          <li>Communication</li>
+          <li>Teamwork</li>
+          <li>Critical thinking</li>
+        </ul>
+      </section>
+      <section id="projects">
+        <h1>Projects</h1>
+        <div>
+          <div>
+            <img
+              src="assits/LoveInAction.png"
+              alt="love in action"
+              width="100px"
+            />
+          </div>
+          <div>
+            <h3>Love in action</h3>
+            <p>Donation plattforme project for charities and people in need</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img src="assits/SmartShop.png" alt="smart shop" width="100px" />
+          </div>
+          <div>
+            <h3>Smart shop</h3>
+            <p>We buy and sell electronic devives online</p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <img src="assits/teashop.png" alt="tea shop" width="100px" />
+          </div>
+          <div>
+            <h3>Tea shop</h3>
+            <p>We sell a high quality tea</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h1>Contact Me</h1>
+        <form>
+          <p>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </p>
+          <p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </p>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
