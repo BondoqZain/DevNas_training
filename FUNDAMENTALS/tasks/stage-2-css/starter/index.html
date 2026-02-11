@@ -1,81 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio — frontend developer">
-  <title>My Portfolio — Style the Portfolio (Starter)</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <a href="#home">My Portfolio</a>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>My Portfolio — Starter</title>
+  </head>
+  <body>
+    <!--
+    STAGE 1 — STARTER
+    Build a one-page portfolio with semantic HTML only (no CSS).
 
-  <main>
-    <section id="home" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Hi, I'm a Frontend Developer</h1>
-      <p>I build accessible, responsive web experiences.</p>
-    </section>
+    Required:
+    - One <h1>
+    - Semantic sections: header (logo + nav), main with article/sections, footer
+    - Hero section
+    - About section
+    - Skills (list)
+    - Projects (titles + short descriptions + links)
+    - Contact form (name, email, message) with proper <label> for each input
 
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About</h2>
-      <p>I'm learning HTML, CSS, and JavaScript. This portfolio is built with semantic HTML.</p>
-    </section>
+    Use: <header>, <nav>, <main>, <section>, <article>, <footer>
+    Avoid: using <div> for main structure
+  -->
+    <header>
+      <span>Welcome To My Portfolio</span>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <ul>
-        <li>HTML5</li>
-        <li>CSS (Flexbox, Grid)</li>
-        <li>JavaScript (ES6+)</li>
-      </ul>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <article>
-        <h3>Task List App</h3>
-        <p>A simple interactive task list with local storage.</p>
-        <a href="#home">View project</a>
-      </article>
-      <article>
-        <h3>Portfolio Page</h3>
-        <p>This page — semantic HTML, no framework.</p>
-        <a href="#home">View project</a>
-      </article>
-    </section>
-
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <form action="#" method="get">
+    <main>
+      <section>
+        <h1>Hi, it's Zain Bondoq</h1>
+        <p>I'm a frontend trainee at DevNas!!</p>
+      </section>
+      <section id="about">
+        <h2>About</h2>
         <p>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          Aspiring Software Engineer with a Passion for Innovation. Driven by
+          curiosity and a love for problem-solving, I thrive on transforming
+          complex challenges into elegant solutions. With a solid foundation in
+          programming and a keen eye for detail, I’m eager to contribute to
+          dynamic projects that make a difference.
         </p>
-        <p>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </p>
-        <p>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </p>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Problem-Solving</li>
+          <li>Communication</li>
+          <li>Teamwork</li>
+          <li>Critical thinking</li>
+          <li>ownership</li>
+        </ul>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
 
-  <footer>
-    <p>&copy; My Portfolio. Built with semantic HTML.</p>
-  </footer>
-</body>
+        <article>
+          <img
+            src="/tasks/assets/LoveInAction.png"
+            alt="love in action"
+            width="100px"
+          />
+
+          <h3>Love in action</h3>
+          <p>Donation platform project for charities and people in need</p>
+        </article>
+
+        <article>
+          <img src="/tasks/assets/SmartShop.png" alt="smart shop" width="100px" />
+
+          <h3>Smart shop</h3>
+          <p>We buy and sell electronic devices online</p>
+        </article>
+
+        <article>
+          <img src="/tasks/assets/TeaShop.png" alt="tea shop" width="100px" />
+
+          <h3>Tea shop</h3>
+          <p>We sell a high-quality tea</p>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+          <p>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </p>
+          <p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </p>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 All Rights Reserved</p>
+    </footer>
+  </body>
 </html>
