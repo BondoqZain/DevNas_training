@@ -10,6 +10,8 @@
   - box-sizing: border-box
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -18,28 +20,25 @@
 
 /* Add your styles below */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
 :root {
-  --primary:rgba(79,93,117);
-  --secondary: rgba(255,255,255);
-  --text-dark:rgba(45,49,66);
-  --text-light: rgba(191,192,192);
-  --accent: rgba(233,236,239);
+  --color-primary: rgba(79, 93, 117);
+  --color-secondary: rgba(255, 255, 255);
+  --text-dark: rgba(45, 49, 66);
+  --text-light: rgba(191, 192, 192);
+  --accent: rgba(239, 131, 84);
+  --spacing-unit: 1rem;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  background: #ffffff;
+  background: var(--color-secondary);
 }
 
 header {
@@ -47,7 +46,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 8%;
-  background: white;
+  background: var(--color-secondary);
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -56,7 +55,7 @@ header {
 header span {
   font-weight: 700;
   font-size: 1.2rem;
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 nav ul {
@@ -73,7 +72,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 main section:first-of-type {
@@ -83,7 +82,7 @@ main section:first-of-type {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #F5F7FF, #ffffff);
+  background: linear-gradient(135deg, #f5f7ff, #ffffff);
 }
 
 h1 {
@@ -103,7 +102,7 @@ section {
 h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 #about p {
@@ -118,7 +117,7 @@ h2 {
 
 #skills li {
   list-style: none;
-  background: var(--secondary);
+  background: var(--color-secondary);
   padding: 1rem;
   border-radius: 12px;
   text-align: left;
@@ -127,28 +126,13 @@ h2 {
 }
 
 #skills li:hover {
-  background: var(--accent);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-secondary);
   transform: translateY(-4px);
 }
 
 #projects {
   background: #fafaff;
-}
-
-#projects article {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-#projects article:hover {
-  transform: translateY(-6px);
-}
-
-#projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
@@ -156,6 +140,18 @@ h2 {
 
 #projects h2 {
   grid-column: 1 / -1;
+}
+
+#projects article {
+  background: var(--color-secondary);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+#projects article:hover {
+  transform: translateY(-6px);
 }
 
 article img {
@@ -182,37 +178,46 @@ form p {
   flex-direction: column;
 }
 
-input, textarea {
+input,
+textarea {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
   padding: 0.7rem;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-light);
   margin-top: 0.3rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--color-primary);
 }
 
 button {
   padding: 0.8rem 1.5rem;
   border: none;
-  background: var(--primary);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-secondary);
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  background: var(--accent);
+  background: var(--color-primary);
+  opacity: 0.9;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  background: #111;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+footer p {
+  margin: 0;
 }
 
 @media (max-width: 768px) {
