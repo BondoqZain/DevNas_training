@@ -1,26 +1,96 @@
-/**
- * STAGE 3 — STARTER
- * Implement the interactive task list.
- *
- * Requirements:
- * - Add task on form submit (read value, prevent default)
- * - Each task has "Done" and "Remove" buttons
- * - Toggle done state (e.g. CSS class or style)
- * - Remove task from list
- * - Persist tasks in localStorage; restore on load
- *
- * Use: const/let, arrow functions, addEventListener, DOM APIs
- */
 
-const form = document.getElementById('task-form');
-const input = document.getElementById('task-input');
-const list = document.getElementById('task-list');
+const STORAGE_KEY = 'fundamentals-task-list';
 
-// Prevent form from reloading the page (add your add-task logic inside)
-form.addEventListener('submit', (e) => e.preventDefault());
+const formEl = document.getElementById('task-form');
+const inputEl = document.getElementById('task-input');
+const listEl = document.getElementById('task-list');
 
-// TODO: Load from localStorage on page load
-// TODO: In submit handler: read input, add task, saveTasks(), render()
-// TODO: Render a task (create li with text, Done button, Remove button)
-// TODO: Save to localStorage when list changes
+let tasks = getTasks();
+renderTasks();
 
+
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const value = inputEl.value.trim();
+  if (value.length === 0) return;
+
+  const newTask = {
+    id: Date.now(),
+    text: value,
+    done: false
+  };
+
+  tasks = [...tasks, newTask];
+
+  inputEl.value = '';
+  inputEl.focus(); 
+
+  updateStorage();
+  renderTasks();
+});
+
+
+listEl.addEventListener('click', (e) => {
+  const li = e.target.closest('li');
+  if (!li) return;
+
+  const id = Number(li.dataset.id);
+
+  const isToggle = e.target.classList.contains('toggle-btn');
+  const isDelete = e.target.classList.contains('delete-btn');
+
+  if (isToggle) {
+    tasks = tasks.map(task =>
+      task.id === id ? { ...task, done: !task.done } : task
+    );
+  }
+
+  if (isDelete) {
+    tasks = tasks.filter(task => task.id !== id);
+  }
+
+  updateStorage();
+  renderTasks();
+});
+
+
+function getTasks() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
+}
+
+function updateStorage() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
+
+
+function renderTasks() {
+  listEl.innerHTML = '';
+
+  for (const task of tasks) {
+    const li = document.createElement('li');
+    li.dataset.id = task.id;
+    li.className = task.done ? 'done' : '';
+
+    const span = document.createElement('span');
+    span.textContent = task.text;
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.textContent = task.done ? 'Undo' : 'Done';
+    toggleBtn.className = 'toggle-btn';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.type = 'button';
+    deleteBtn.textContent = 'Remove';
+    deleteBtn.className = 'delete-btn';
+
+    li.append(span, toggleBtn, deleteBtn);
+    listEl.appendChild(li);
+  }
+}
